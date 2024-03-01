@@ -29,7 +29,11 @@ var Impuesto = /*#__PURE__*/function () {
   }, {
     key: "setMontoBrutoAnual",
     value: function setMontoBrutoAnual(deducciones) {
-      return this._deducciones = deducciones;
+      if (deducciones >= 0) {
+        return this._deducciones = deducciones;
+      } else {
+        return this._deducciones = null;
+      }
     }
   }, {
     key: "getDeducciones",
