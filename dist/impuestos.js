@@ -10,16 +10,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Impuesto = /*#__PURE__*/function () {
   function Impuesto(montoBrutoAnual, deducciones) {
     _classCallCheck(this, Impuesto);
-    if (montoBrutoAnual >= 0) {
-      this._montoBrutoAnual = montoBrutoAnual;
-    } else {
-      this._montoBrutoAnual = null;
-    }
-    if (deducciones >= 0) {
-      this._deducciones = deducciones;
-    } else {
-      this._deducciones = null;
-    }
+    this._montoBrutoAnual = montoBrutoAnual;
+    this._deducciones = deducciones;
   }
   _createClass(Impuesto, [{
     key: "getMontoBrutoAnual",
@@ -28,17 +20,18 @@ var Impuesto = /*#__PURE__*/function () {
     }
   }, {
     key: "setMontoBrutoAnual",
-    value: function setMontoBrutoAnual(deducciones) {
-      if (deducciones >= 0) {
-        return this._deducciones = deducciones;
-      } else {
-        return this._deducciones = null;
-      }
+    value: function setMontoBrutoAnual(montoBrutoAnual) {
+      return this._montoBrutoAnual = montoBrutoAnual;
     }
   }, {
     key: "getDeducciones",
     value: function getDeducciones() {
       return this._deducciones;
+    }
+  }, {
+    key: "setDeducciones",
+    value: function setDeducciones(deducciones) {
+      return this._deducciones = deducciones;
     }
   }]);
   return Impuesto;

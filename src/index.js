@@ -1,20 +1,20 @@
 import Cliente from "./clientes.js";
 import Impuesto from "./impuestos.js";
 
-let impuesto1 = new Impuesto(500, 100);
-let cliente1 = new Cliente("Pablo", impuesto1);
 
-let impuesto2 = new Impuesto(-4, "ads");
-let cliente2 = new Cliente("Aldo", impuesto2);
+//Prueba con valores
+let montoAnual = '500000a';
+let montoDeducciones = 'nd50000';
+//Validación de números negativos y letras
+if (montoAnual <= 0 || montoDeducciones < 0 || isNaN(montoAnual || isNaN(montoDeducciones))) {
+    console.log("Ambos valores deben ser positivos y no deben ser letras y caracteres");
+    //Validar si las deducciones son mayores al monto anual
+} else if (montoDeducciones > montoAnual) {
+    console.log("usted está exonerado de impuestos");
+} else {
+    let impuesto1 = new Impuesto(montoAnual, montoDeducciones);
+    let cliente1 = new Cliente("Pablo", impuesto1);
+    console.log(cliente1.getNombre(), cliente1.calcularImpuesto(), "deducción :", impuesto1.getDeducciones(), "Monto bruto Anual: ", impuesto1.getMontoBrutoAnual());
+}
 
-let impuesto3 = new Impuesto(500, 600);
-let cliente3 = new Cliente("Alejandra", impuesto3);
 
-console.log(cliente1.getNombre(), cliente1.calcularImpuesto(), "deducción :", impuesto1.getDeducciones(), "Monto bruto Anual: ", impuesto1.getMontoBrutoAnual());
-console.log(cliente2.getNombre(), cliente2.calcularImpuesto(), "deducción :", impuesto2.getDeducciones(), "Monto bruto Anual: ", impuesto2.getMontoBrutoAnual());
-console.log(cliente3.getNombre(), cliente3.calcularImpuesto(), "deducción :", impuesto3.getDeducciones(), "Monto bruto Anual: ", impuesto3.getMontoBrutoAnual());
-
-
-//Probando set
-impuesto1.setMontoBrutoAnual("jsdk")
-console.log(cliente1.getNombre(), cliente1.calcularImpuesto(), "deducción :", impuesto1.getDeducciones(), "Monto bruto Anual: ", impuesto1.getMontoBrutoAnual());

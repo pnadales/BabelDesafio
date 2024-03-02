@@ -1,41 +1,23 @@
 class Impuesto {
   constructor(montoBrutoAnual, deducciones) {
-    if (montoBrutoAnual >= 0) {
-      this._montoBrutoAnual = montoBrutoAnual;
-    } else {
-      this._montoBrutoAnual = null;
-    }
-
-    if (deducciones >= 0) {
-      this._deducciones = deducciones;
-    } else {
-      this._deducciones = null;
-    }
-
+    this._montoBrutoAnual = montoBrutoAnual;
+    this._deducciones = deducciones;
   }
-  getMontoBrutoAnual() {
 
+  getMontoBrutoAnual() {
     return this._montoBrutoAnual;
   }
-  setMontoBrutoAnual(montoBrutoAnual) {
-    //En caso de ser un número negativo o un string retorna false
-    if (montoBrutoAnual >= 0) {
-      return (this._montoBrutoAnual = montoBrutoAnual);
-    } else {
-      return (this._montoBrutoAnual = null);
-    }
 
+  setMontoBrutoAnual(montoBrutoAnual) {
+    return (this._montoBrutoAnual = montoBrutoAnual);
   }
+
   getDeducciones() {
     return this._deducciones;
   }
-  setMontoBrutoAnual(deducciones) {
-    if (deducciones >= 0) {
-      return (this._deducciones = deducciones);
-    } else {
-      return (this._deducciones = null);
-    }
 
+  setDeducciones(deducciones) {
+    return (this._deducciones = deducciones);
   }
 }
 
